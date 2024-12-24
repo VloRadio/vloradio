@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to VloRadio</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>VloRadio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="radio-container">
-        <h1>VloRadio</h1>
-        <audio id="radio" controls>
-            <source src="http://yourstreamurl.com/stream" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-        <button id="playButton">Play</button>
-        <button id="pauseButton">Pause</button>
+    <div class="container text-center">
+        <h1 class="my-4">Welcome to VloRadio</h1>
+        <div class="radio-container p-4 bg-white rounded shadow">
+            <audio controls class="w-100 mb-3">
+                <source src="your-radio-stream-url" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <button class="btn btn-primary">Play</button>
+            <button class="btn btn-secondary">Stop</button>
+        </div>
     </div>
-    <script src="scripts.js"></script>
 </body>
 </html>
