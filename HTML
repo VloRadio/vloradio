@@ -1,240 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VloRadio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Play button functionality
+        const playBtn = document.getElementById('playBtn');
+        let isPlaying = false;
+        const audio = new Audio('https://www.internet-radio.com/station/vloradio');
 
-        body {
-            background-color: #121212;
-            color: #ffffff;
-            font-family: 'Arial', sans-serif;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .radio-player {
-            background-color: #1e1e1e;
-            border-radius: 20px;
-            padding: 2rem;
-            width: 400px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .station-info {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .station-name {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: #fff;
-        }
-
-        .now-playing {
-            color: #9f9f9f;
-            font-size: 0.9rem;
-        }
-
-        .visualizer {
-            height: 100px;
-            background-color: #2d2d2d;
-            border-radius: 10px;
-            margin: 1rem 0;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .visualizer-bars {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            height: 100%;
-            padding: 10px;
-        }
-
-        .bar {
-            width: 4px;
-            background: linear-gradient(to top, #4a90e2, #67b26f);
-            border-radius: 2px;
-            transition: height 0.1s ease;
-        }
-
-        .controls {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .control-btn {
-            background: none;
-            border: none;
-            color: #fff;
-            cursor: pointer;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background-color 0.3s ease;
-        }
-
-        .control-btn:hover {
-            background-color: #333;
-        }
-
-        .play-btn {
-            background-color: #4a90e2;
-            width: 60px;
-            height: 60px;
-        }
-
-        .play-btn:hover {
-            background-color: #357abd;
-        }
-
-        .volume-control {
-            margin-top: 1.5rem;
-        }
-
-        .volume-slider {
-            width: 100%;
-            height: 4px;
-            -webkit-appearance: none;
-            background: #4a4a4a;
-            border-radius: 2px;
-            outline: none;
-        }
-
-        .volume-slider::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            width: 16px;
-            height: 16px;
-            background: #4a90e2;
-            border-radius: 50%;
-            cursor: pointer;
-        }
-
-        .status {
-            text-align: center;
-            margin-top: 1rem;
-            color: #67b26f;
-            font-size: 0.9rem;
-        }
-    </style>
-</head>
-<body>
-    <div class="radio-player">
-        <div class="station-info">
-            <h1 class="station-name">VloRadio</h1>
-            <div class="now-playing">Now Playing: Po Ç’kemi!</div>
-        </div>
-
-        <div class="visualizer">
-            <div class="visualizer-bars" id="visualizer"></div>
-        </div>
-
-        <div class="controls">
-            <button class="control-btn previous-btn">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/>
-                </svg>
-            </button>
-            <button class="control-btn play-btn" id="playBtn">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M8 5v14l11-7z"/>
-                </svg>
-            </button>
-            <button class="control-btn next-btn">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/>
-                </svg>
-            </button>
-        </div>
-
-        <div class="volume-control">
-            <input type="range" class="volume-slider" min="0" max="100" value="80">
-        </div>
-
-        <div class="status">Connected</div>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Create visualizer bars
-            const visualizer = document.getElementById('visualizer');
-            const barsCount = 32;
-            
-            for (let i = 0; i < barsCount; i++) {
-                const bar = document.createElement('div');
-                bar.className = 'bar';
-                visualizer.appendChild(bar);
+        playBtn.addEventListener('click', () => {
+            isPlaying = !isPlaying;
+            if (isPlaying) {
+                playBtn.innerHTML = `
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                    </svg>
+                `;
+                audio.play();
+            } else {
+                playBtn.innerHTML = `
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                `;
+                audio.pause();
             }
-
-            // Animate visualizer
-            function animateVisualizer() {
-                const bars = document.querySelectorAll('.bar');
-                bars.forEach(bar => {
-                    const height = Math.random() * 100;
-                    bar.style.height = `${height}%`;
-                });
-            }
-
-            // Start visualization
-            setInterval(animateVisualizer, 100);
-
-            // Play button functionality
-            const playBtn = document.getElementById('playBtn');
-            let isPlaying = false;
-
-            playBtn.addEventListener('click', () => {
-                isPlaying = !isPlaying;
-                if (isPlaying) {
-                    playBtn.innerHTML = `
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
-                        </svg>
-                    `;
-                } else {
-                    playBtn.innerHTML = `
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M8 5v14l11-7z"/>
-                        </svg>
-                    `;
-                }
-            });
-
-            // Volume control
-            const volumeSlider = document.querySelector('.volume-slider');
-            volumeSlider.addEventListener('input', (e) => {
-                const volume = e.target.value;
-                // Implement volume control logic here
-            });
-
-            // Simulated track updates
-            const nowPlaying = document.querySelector('.now-playing');
-            const tracks = [
-                'Po Ç’kemi!',
-                'VloRadio'
-            ];
-
-            setInterval(() => {
-                const randomTrack = tracks[Math.floor(Math.random() * tracks.length)];
-                nowPlaying.textContent = `Now Playing: ${randomTrack}`;
-            }, 10000);
         });
-    </script>
-</body>
-</html>
+    });
+</script>
