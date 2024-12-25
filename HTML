@@ -1,27 +1,25 @@
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // Play button functionality
-        const playBtn = document.getElementById('playBtn');
-        let isPlaying = false;
-        const audio = new Audio('https://www.internet-radio.com/station/vloradio');
-
-        playBtn.addEventListener('click', () => {
-            isPlaying = !isPlaying;
-            if (isPlaying) {
-                playBtn.innerHTML = `
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
-                    </svg>
-                `;
-                audio.play();
-            } else {
-                playBtn.innerHTML = `
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M8 5v14l11-7z"/>
-                    </svg>
-                `;
-                audio.pause();
-            }
-        });
-    });
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>About Us</h1>
+    </header>
+    <section class="about-section">
+        <div class="container">
+            <h2>Our Story</h2>
+            <p>Welcome to VloRadio! We are a dedicated team of professionals committed to providing the best online music experience...</p>
+            <h2>Our Mission</h2>
+            <p>Our mission is to deliver high-quality music streaming services to music lovers around the world...</p>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 VloRadio. All rights reserved.</p>
+    </footer>
+</body>
+</html>
