@@ -2,44 +2,30 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #2e2e2e; /* Dark grey background for the body */
-    color: #ffffff; /* White text color */
 }
 
 header {
-    background-color: #1a1a1a; /* Darker grey for header */
-    color: #ffffff; /* White text color for header */
-    padding: 20px 0;
+    background-color: #333;
+    color: white;
+    padding: 1em 0;
     text-align: center;
 }
 
 .about-section {
-    padding: 20px;
-    background-color: #3a3a3a; /* Slightly lighter dark grey for section */
-    color: #ffffff; /* White text color for section */
+    padding: 2em;
 }
 
 .container {
     max-width: 800px;
     margin: auto;
-    padding: 0 20px;
-}
-
-h2 {
-    color: #cccccc; /* Light grey for headings */
-}
-
-p {
-    line-height: 1.6;
-    color: #ffffff; /* White text color for paragraphs */
 }
 
 footer {
-    background-color: #1a1a1a; /* Darker grey for footer */
-    color: #ffffff; /* White text color for footer */
+    background-color: #333;
+    color: white;
     text-align: center;
-    padding: 10px 0;
+    padding: 1em 0;
     position: fixed;
-    bottom: 0;
     width: 100%;
+    bottom: 0;
 }
