@@ -8,9 +8,13 @@ body.dark-mode {
     color: #ffffff;
 }
 
+.about-section {
+    text-align: center;
+}
+
 .about-image {
     display: block;
     margin: 20px auto;
-    max-width: 30%;
+    max-width: 20%;
     height: auto;
 }
