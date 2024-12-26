@@ -2,7 +2,8 @@ body {
     background-color: #000000;
     color: #ffffff;
     font-family: Arial, sans-serif;
-    font-weight: 300; /* Add this line to make the font thinner */
+    font-weight: 200; /* Thinner font */
+    font-size: 12px; /* Smaller font */
     margin: 0;
     padding: 0;
     text-align: center;
