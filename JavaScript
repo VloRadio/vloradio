@@ -1,14 +1,6 @@
-// scripts.js
-document.addEventListener('DOMContentLoaded', function() {
-    const radio = document.getElementById('radio');
-    const playButton = document.getElementById('playButton');
-    const pauseButton = document.getElementById('pauseButton');
+// script.js
 
-    playButton.addEventListener('click', function() {
-        radio.play();
-    });
-
-    pauseButton.addEventListener('click', function() {
-        radio.pause();
-    });
-});
+function changeContent() {
+    document.getElementById("story").innerText = "This is the new story content!";
+    document.getElementById("mission").innerText = "This is the new mission content!";
+}
