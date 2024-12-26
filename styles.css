@@ -4,13 +4,21 @@ body {
     text-align: center;
 }
 
+header h1 {
+    text-align: center;
+}
+
+footer p {
+    text-align: center;
+}
+
 .about-section {
     text-align: center;
 }
 
 .about-image {
     display: block;
-    margin: 20px auto;
-    max-width: 20%;
+    margin: 10px auto;
+    max-width: 10%;
     height: auto;
 }
