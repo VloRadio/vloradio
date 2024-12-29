@@ -16,12 +16,21 @@
     <header>
         <h1>Welcome</h1>
         <img src="VloRadio.jpg" alt="Logo of VloRadio" class="about-image">
-        <iframe
-    src="https://player.twitch.tv/?<vloradio, video, or collection>&parent=streamernews.example.com"
-    height="<height>"
-    width="<width>"
-    allowfullscreen>
-</iframe>
+        <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
+<div id="<player div ID>"></div>
+<script type="text/javascript">
+  var options = {
+    width: <width>,
+    height: <height>,
+    channel: "<vloradio ID>",
+    video: "<video ID>",
+    collection: "<collection ID>",
+    // only needed if your site is also embedded on embed.example.com and othersite.example.com
+    parent: ["embed.example.com", "othersite.example.com"]
+  };
+  var player = new Twitch.Player("<player div ID>", options);
+  player.setVolume(0.5);
+</script>
     </script>
     </header>
     <section id="about" class="about-section">
