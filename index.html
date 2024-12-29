@@ -15,21 +15,13 @@
 <body>
     <header>
         <h1>Welcome</h1>
-        <img src="VloRadio.jpg" alt="Logo of VloRadio" class="about-image">    <!-- Add a placeholder for the Twitch embed -->
-    <div id="twitch-embed"></div>
-
-    <!-- Load the Twitch embed JavaScript file -->
-    <script src="https://embed.twitch.tv/embed/v1.js"></script>
-
-    <!-- Create a Twitch.Embed object that will render within the "twitch-embed" element -->
-    <script type="text/javascript">
-      new Twitch.Embed("twitch-embed", {
-        width: 854,
-        height: 480,
-        channel: "vloradio",
-        // Only needed if this page is going to be embedded on other websites
-        parent: ["embed.example.com", "othersite.example.com"]
-      });
+        <img src="VloRadio.jpg" alt="Logo of VloRadio" class="about-image">
+        <iframe
+    src="https://player.twitch.tv/?<channel, audio, or collection>&parent=streamernews.example.com"
+    height="<height>"
+    width="<width>"
+    allowfullscreen>
+</iframe>
     </script>
     </header>
     <section id="about" class="about-section">
