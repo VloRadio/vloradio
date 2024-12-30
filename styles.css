@@ -2,7 +2,7 @@ body {
     background-color: #121212; /* Slightly softer black */
     color: #e0e0e0; /* Light grey text for better readability */
     font-family: Arial, sans-serif;
-    font-weight: 300; /* Slightly bolder than 100 for better readability */
+    font-weight: 200; /* Slightly bolder than 100 for better readability */
     font-size: 16px; /* Increased font size for better readability */
     margin: 0;
     padding: 0;
