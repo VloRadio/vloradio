@@ -3,7 +3,7 @@ body {
     color: #e0e0e0; /* Light grey text for better readability */
     font-family: Arial, sans-serif;
     font-weight: 200; /* Slightly bolder than 100 for better readability */
-    font-size: 16px; /* Increased font size for better readability */
+    font-size: 15px; /* Increased font size for better readability */
     margin: 0;
     padding: 0;
     text-align: center;
@@ -18,7 +18,7 @@ header, section {
 
 header {
     background-color: #1a1a1a;
-    padding: 20px;
+    padding: 15px;
 }
 
 header nav ul {
@@ -41,7 +41,7 @@ header nav ul li a:hover {
 }
 
 .about-section {
-    padding: 20px;
+    padding: 15px;
 }
 
 .about-image {
@@ -64,7 +64,7 @@ footer p {
     margin: 0;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
     .about-image {
         max-width: 50%;
     }
