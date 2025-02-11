@@ -3,66 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=0.7">
-         <title>VloRadio</title>
+    <title>VloRadio</title>
     <link rel="stylesheet" href="styles.css">
     <meta name="description" content="Your Best Online Music Experience">
     <meta name="keywords" content="VloRadio, Online Music, Streaming">
-      <div class="radio-container">
-         <h1>Albania</h1>
     <script src="scripts.js"></script>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+            background-color: black;
+            color: green;
+        }
+
+        canvas {
+            display: block;
+        }
+    </style>
 </head>
-  <body>
-         <img src="VloRadio.jpg" alt="Logo of VloRadio" class="about-image">
-         <h1>Welcome</h1>
-<html>
-  <body>
-    <!-- Add a placeholder for the Twitch embed -->
-    <div id="twitch-embed"></div>
-    <!-- Load the Twitch embed script -->
-    <script src="https://embed.twitch.tv/embed/v1.js"></script>
-    <!-- Create a Twitch.Embed object that will render within the "twitch-embed" element. -->
-    <script type="text/javascript">
-      var embed = new Twitch.Embed("twitch-embed", {
-        width: 480,
-        height: 270,
-        channel: "vloradio",
-        layout: "video",
-        autoplay: false,
-        // Only needed if this page is going to be embedded on other websites
-        parent: ["embed.example.com", "othersite.example.com"]
-      });
-      embed.addEventListener(Twitch.Embed.VIDEO_READY, () => {
-        var player = embed.getPlayer();
-        player.play();
-      });
+<body>
+    <div class="radio-container">
+        <h1>Albania</h1>
+        <img src="VloRadio.jpg" alt="Logo of VloRadio" class="about-image">
+        <h1>Welcome</h1>
+        <!-- Add a placeholder for the Twitch embed -->
+        <div id="twitch-embed"></div>
+        <!-- Load the Twitch embed script -->
+        <script src="https://embed.twitch.tv/embed/v1.js"></script>
+        <!-- Create a Twitch.Embed object that will render within the "twitch-embed" element. -->
+        <script type="text/javascript">
+            var embed = new Twitch.Embed("twitch-embed", {
+                width: 480,
+                height: 270,
+                channel: "vloradio",
+                layout: "video",
+                autoplay: false,
+                // Only needed if this page is going to be embedded on other websites
+                parent: ["embed.example.com", "othersite.example.com"]
+            });
+            embed.addEventListener(Twitch.Embed.VIDEO_READY, () => {
+                var player = embed.getPlayer();
+                player.play();
+            });
+        </script>
+    </div>
+
+    <canvas id="matrix"></canvas>
+
+    <script>
+        const canvas = document.getElementById('matrix');
+        const ctx = canvas.getContext('2d');
+
+        // Set canvas to full screen
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const fontSize = 16;
+        const columns = canvas.width / fontSize;
+
+        // An array of drops - one per column
+        const drops = Array.from({ length: columns }).fill(1);
+
+        // The characters - taken from the unicode charset
+        const chars = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズヅブプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴ'.split('');
+
+        function draw() {
+            // Black BG for the canvas
+            // Translucent BG to show trail
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#0F0'; // Green text
+            ctx.font = `${fontSize}px monospace`;
+
+            // Looping over drops
+            for (let i = 0; i < drops.length; i++) {
+                // A random character to print
+                const text = chars[Math.floor(Math.random() * chars.length)];
+
+                // x = i*fontSize, y = value of drops[i]*fontSize
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                // Sending the drop back to the top randomly after it has crossed the screen
+                // Adding a randomness to the reset to make the drops scattered on the Y axis
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+
+                // Incrementing Y coordinate
+                drops[i]++;
+            }
+        }
+
+        setInterval(draw, 33);
     </script>
-  </body>
+</body>
 </html>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.7">
-    <title>Spotify Image</title>
-</head>
-  <body>
-    <h1>Po Ç'kemi! ♥️</h1>
-    <img src="https://novatorem.vercel.app/api/spotify?background_color=0d1117&border_color=ffffff" alt="Spotify">
-  </body>
-</header>
-    <section id="about" class="about-section">
-      <div class="container">
-         <h2>About Us</h2>
-         <p>We are a dedicated team of professionals committed to provide the best online music experience 📡</p>
-    <section id="mission" class="about-section">
-      <div class="container">
-         <h2>Our Mission</h2>
-         <p>Our mission is to deliver high quality music service to music lovers around the 🌍</p>
-    <section id="contact" class="about-section">
-      <div class="container">
-         <h2>Contact Us</h2>
-         <p>Email: vloradio77@gmail.com</p>
-      </div>
-     <audio controls>
-    <source src="http://vloradio:1234/stream.ogg">
-    Your browser does not support the audio tag.
-     </audio>
-    </section>
-     <p>&copy; 2020 VloRadio. All rights reserved.</p>
