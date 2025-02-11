@@ -11,8 +11,8 @@ const columns = canvas.width / fontSize;
 // An array of drops - one per column
 const drops = Array.from({ length: columns }).fill(1);
 
-// The characters - taken from the unicode charset
-const chars = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズヅブプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴ'.split('');
+// The characters - music notes
+const chars = '♪♫♬♩♭♮♯'.split('');
 
 function draw() {
     // Black BG for the canvas
