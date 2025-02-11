@@ -1,0 +1,83 @@
+body {
+    background-color: #121212; /* Slightly softer black */
+    color: #e0e0e0; /* Light grey text for better readability */
+    font-family: Arial, sans-serif;
+    font-weight: 100; /* Slightly bolder than 50 for better readability */
+    font-size: 14px; /* Increased font size for better readability */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1; /* Ensure the content is above the canvas */
+}
+
+header, section {
+    flex: 1;
+}
+
+header {
+    background-color: #1a1a1a;
+    padding: 14px;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+header nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.about-section {
+    padding: 14px;
+}
+
+.about-image {
+    display: block;
+    margin: 10px auto;
+    max-width: 10%;
+    height: auto;
+}
+
+footer {
+    background-color: #1a1a1a;
+    padding: 10px;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+@media (max-width: 500px) {
+    .about-image {
+        max-width: 50%;
+    }
+}
+
+canvas {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Place the canvas behind other content */
+}
