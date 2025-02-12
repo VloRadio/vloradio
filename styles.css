@@ -51,31 +51,31 @@ header nav ul li a:hover {
     margin: 10px auto;
     width: auto;
     height: auto;
-    max-width: 15%; /* Default size for larger screens */
+    max-width: 13.5%; /* Reduced by 10% */
 }
 
 /* Responsive adjustments */
 @media (max-width: 1200px) {
     .about-image {
-        max-width: 20%; /* Slightly larger for medium screens */
+        max-width: 18%; /* Slightly larger for medium screens */
     }
 }
 
 @media (max-width: 900px) {
     .about-image {
-        max-width: 30%; /* Larger for smaller screens */
+        max-width: 27%; /* Larger for smaller screens */
     }
 }
 
 @media (max-width: 600px) {
     .about-image {
-        max-width: 40%; /* Larger for mobile devices */
+        max-width: 36%; /* Larger for mobile devices */
     }
 }
 
 @media (max-width: 500px) {
     .about-image {
-        max-width: 50%; /* Larger for very small screens */
+        max-width: 45%; /* Larger for very small screens */
     }
 }
 
