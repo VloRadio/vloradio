@@ -1,5 +1,4 @@
 body {
-    background-color: #121212; /* Slightly softer black */
     color: #e0e0e0; /* Light grey text for better readability */
     font-family: Arial, sans-serif;
     font-weight: 100; /* Slightly bolder than 50 for better readability */
@@ -14,13 +13,12 @@ body {
     overflow-x: hidden; /* Allow vertical scrolling only */
 }
 
-.radio-container, header, section, footer, button, #twitch-embed, img {
+.radio-container, header, section, button, #twitch-embed, img {
     position: relative;
     z-index: 1; /* Ensure all content elements are above the canvas */
 }
 
 header {
-    background-color: #1a1a1a;
     padding: 14px;
 }
 
@@ -52,19 +50,6 @@ header nav ul li a:hover {
     margin: 10px auto;
     max-width: 10%;
     height: auto;
-}
-
-footer {
-    background-color: #1a1a1a;
-    padding: 10px;
-    width: 100%;
-    position: relative;
-    bottom: 0;
-    text-align: center;
-}
-
-footer p {
-    margin: 0;
 }
 
 @media (max-width: 500px) {
