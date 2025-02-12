@@ -15,7 +15,7 @@ const drops = Array.from({ length: columns }).fill(1);
 const chars = '♪♫♬♩♭♮♯'.split('');
 
 // Adjust the speed of the drops
-const speed = 0.5; // Lower value for slower speed
+const speed = 0.1; // Lower value for slower speed
 
 function draw() {
     // Black BG for the canvas
