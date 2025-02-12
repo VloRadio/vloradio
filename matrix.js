@@ -14,6 +14,9 @@ const drops = Array.from({ length: columns }).fill(1);
 // The characters - music notes
 const chars = '♪♫♬♩♭♮♯'.split('');
 
+// Adjust the speed of the drops
+const speed = 0.5; // Lower value for slower speed
+
 function draw() {
     // Black BG for the canvas
     // Translucent BG to show trail
@@ -39,7 +42,7 @@ function draw() {
         }
 
         // Incrementing Y coordinate
-        drops[index]++;
+        drops[index] += speed;
     });
 
     requestAnimationFrame(draw);
