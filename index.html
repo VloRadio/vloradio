@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="styles.css">
     <meta name="description" content="Your Best Online Music Experience">
     <meta name="keywords" content="VloRadio, Online Music, Streaming">
+    <meta name="author" content="VloRadio Team">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap">
     <script src="scripts.js" defer></script>
     <script src="matrix.js" defer></script>
 </head>
@@ -14,7 +17,7 @@
     <canvas id="matrix"></canvas>
     <div class="radio-container">
         <h1>Albania</h1>
-        <img src="VloRadio.jpg" alt="Logo of VloRadio" class="about-image">
+        <img src="VloRadio.jpg" alt="Logo of VloRadio" class="about-image" loading="lazy">
         <h1>Welcome</h1>
     </div>
     <div id="twitch-embed"></div>
@@ -43,6 +46,7 @@
     <footer>
         <p>&copy; 2020 VloRadio. All rights reserved.</p>
     </footer>
+    <button id="darkModeToggle">Toggle Dark Mode</button>
     <script src="https://embed.twitch.tv/embed/v1.js" defer></script>
     <script type="text/javascript">
         document.addEventListener("DOMContentLoaded", function() {
