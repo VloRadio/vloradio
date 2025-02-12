@@ -1,83 +1,42 @@
-body {
-    background-color: #121212; /* Dark background color */
-    color: #e0e0e0; /* Light grey text for better readability */
-    font-family: 'Roboto', Arial, sans-serif; /* Use web font */
-    font-weight: 100; /* Slightly bolder than 50 for better readability */
-    font-size: 14px; /* Increased font size for better readability */
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    position: relative;
-    overflow-x: hidden; /* Allow vertical scrolling only */
+const canvas = document.getElementById('background');
+const ctx = canvas.getContext('2d');
+
+// Set canvas to full screen
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const barWidth = 10;
+const barGap = 5;
+const barCount = Math.floor(canvas.width / (barWidth + barGap));
+const bars = Array.from({ length: barCount }, () => ({
+    height: Math.random() * canvas.height,
+    speed: Math.random() * 2 + 1,
+}));
+
+function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    bars.forEach((bar, index) => {
+        const x = index * (barWidth + barGap);
+        ctx.fillStyle = '#00FF00';
+        ctx.fillRect(x, canvas.height - bar.height, barWidth, bar.height);
+
+        bar.height += bar.speed;
+        if (bar.height > canvas.height) {
+            bar.height = Math.random() * canvas.height / 2;
+            bar.speed = Math.random() * 2 + 1;
+        }
+    });
+
+    requestAnimationFrame(draw);
 }
 
-.radio-container, header, section, button, #twitch-embed, img {
-    position: relative;
-    z-index: 1; /* Ensure all content elements are above the canvas */
-}
+// Resize canvas on window resize
+window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    bars.length = Math.floor(canvas.width / (barWidth + barGap));
+    bars.fill({ height: Math.random() * canvas.height, speed: Math.random() * 2 + 1 });
+});
 
-header {
-    padding: 14px;
-}
-
-header nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-header nav ul li {
-    display: inline;
-    margin: 0 10px;
-}
-
-header nav ul li a {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-header nav ul li a:hover {
-    text-decoration: underline;
-}
-
-.about-section {
-    padding: 14px;
-}
-
-.about-image {
-    display: block;
-    margin: 10px auto;
-    max-width: 10%;
-    height: auto;
-}
-
-footer {
-    padding: 10px;
-    width: 100%;
-    position: relative;
-    bottom: 0;
-    text-align: center;
-}
-
-footer p {
-    margin: 0;
-}
-
-@media (max-width: 500px) {
-    .about-image {
-        max-width: 50%;
-    }
-}
-
-canvas {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0; /* Place the canvas behind other content */
-    pointer-events: none; /* Ensure the canvas does not interfere with interactions */
-}
+draw();
