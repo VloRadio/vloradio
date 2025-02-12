@@ -52,6 +52,18 @@ header nav ul li a:hover {
     height: auto;
 }
 
+footer {
+    padding: 10px;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
 @media (max-width: 500px) {
     .about-image {
         max-width: 50%;
