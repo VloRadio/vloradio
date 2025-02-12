@@ -65,9 +65,9 @@ footer p {
     margin: 0;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 400px) {
     .about-image {
-        max-width: 50%;
+        max-width: 40%;
     }
 }
 
