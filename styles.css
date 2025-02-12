@@ -11,7 +11,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     position: relative;
-    overflow: hidden; /* Ensure no scrollbars */
+    overflow-x: hidden; /* Allow vertical scrolling only */
 }
 
 .radio-container, header, section, footer, button, #twitch-embed, img {
