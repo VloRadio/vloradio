@@ -79,12 +79,6 @@ header nav ul li a:hover {
     }
 }
 
-@media (max-width: 400px) {
-    .about-image {
-        max-width: 60%; /* Larger for very small screens */
-    }
-}
-
 footer {
     padding: 10px;
     width: 100%;
