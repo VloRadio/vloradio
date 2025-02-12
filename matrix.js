@@ -20,7 +20,7 @@ const speed = 0.1; // Lower value for slower speed
 function draw() {
     // Black BG for the canvas
     // Translucent BG to show trail
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     ctx.fillStyle = '#0F0'; // Green text
