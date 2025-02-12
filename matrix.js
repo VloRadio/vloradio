@@ -26,6 +26,7 @@ function draw() {
     ctx.fillStyle = '#0F0'; // Green text
     ctx.font = `${fontSize}px monospace`;
     ctx.textBaseline = 'top'; // Align text to the top to make it clearer
+    ctx.imageSmoothingEnabled = false; // Disable image smoothing for clearer text
 
     // Looping over drops
     drops.forEach((y, index) => {
