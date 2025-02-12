@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="styles.css">
     <meta name="description" content="Your Best Online Music Experience">
     <meta name="keywords" content="VloRadio, Online Music, Streaming">
-    <script src="scripts.js"></script>
+    <script src="scripts.js" defer></script>
+    <script src="matrix.js" defer></script>
 </head>
 <body>
     <canvas id="matrix"></canvas>
@@ -20,7 +21,7 @@
     <section id="about" class="about-section">
         <div class="container">
             <h2>About Us</h2>
-            <p>We are a dedicated team of professionals committed to provide the best online music experience 📡</p>
+            <p>We are a dedicated team of professionals committed to provide the best online music experience 🎧</p>
         </div>
     </section>
     <section id="mission" class="about-section">
@@ -43,21 +44,21 @@
         <p>&copy; 2020 VloRadio. All rights reserved.</p>
     </footer>
     <button id="darkModeToggle">Toggle Dark Mode</button>
-    <script src="scripts.js"></script>
-    <script src="matrix.js"></script>
-    <script src="https://embed.twitch.tv/embed/v1.js"></script>
+    <script src="https://embed.twitch.tv/embed/v1.js" defer></script>
     <script type="text/javascript">
-        var embed = new Twitch.Embed("twitch-embed", {
-            width: 480,
-            height: 270,
-            channel: "vloradio",
-            layout: "video",
-            autoplay: false,
-            parent: ["embed.example.com", "othersite.example.com"]
-        });
-        embed.addEventListener(Twitch.Embed.VIDEO_READY, () => {
-            var player = embed.getPlayer();
-            player.play();
+        document.addEventListener("DOMContentLoaded", function() {
+            var embed = new Twitch.Embed("twitch-embed", {
+                width: 480,
+                height: 270,
+                channel: "vloradio",
+                layout: "video",
+                autoplay: false,
+                parent: ["embed.example.com", "othersite.example.com"]
+            });
+            embed.addEventListener(Twitch.Embed.VIDEO_READY, () => {
+                var player = embed.getPlayer();
+                player.play();
+            });
         });
     </script>
 </body>
