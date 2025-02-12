@@ -24,22 +24,33 @@ function draw() {
     ctx.font = `${fontSize}px monospace`;
 
     // Looping over drops
-    for (let i = 0; i < drops.length; i++) {
+    drops.forEach((y, index) => {
         // A random character to print
         const text = chars[Math.floor(Math.random() * chars.length)];
+        const x = index * fontSize;
 
-        // x = i*fontSize, y = value of drops[i]*fontSize
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+        // Drawing the text
+        ctx.fillText(text, x, y * fontSize);
 
         // Sending the drop back to the top randomly after it has crossed the screen
         // Adding a randomness to the reset to make the drops scattered on the Y axis
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-            drops[i] = 0;
+        if (y * fontSize > canvas.height && Math.random() > 0.975) {
+            drops[index] = 0;
         }
 
         // Incrementing Y coordinate
-        drops[i]++;
-    }
+        drops[index]++;
+    });
+
+    requestAnimationFrame(draw);
 }
 
-setInterval(draw, 33);
+// Resize canvas on window resize
+window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    drops.length = Math.floor(canvas.width / fontSize);
+    drops.fill(1);
+});
+
+draw();
