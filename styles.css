@@ -1,4 +1,5 @@
 body {
+    background-color: #121212; /* Dark background color */
     color: #e0e0e0; /* Light grey text for better readability */
     font-family: 'Roboto', Arial, sans-serif; /* Use web font */
     font-weight: 100; /* Slightly bolder than 50 for better readability */
@@ -11,12 +12,6 @@ body {
     min-height: 100vh;
     position: relative;
     overflow-x: hidden; /* Allow vertical scrolling only */
-    background-color: #f0f0f0; /* Light background color */
-}
-
-body.dark-mode {
-    color: #f0f0f0; /* Light grey text for better readability in dark mode */
-    background-color: #121212; /* Dark background color */
 }
 
 .radio-container, header, section, button, #twitch-embed, img {
@@ -85,20 +80,4 @@ canvas {
     height: 100%;
     z-index: 0; /* Place the canvas behind other content */
     pointer-events: none; /* Ensure the canvas does not interfere with interactions */
-}
-
-button#darkModeToggle {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button#darkModeToggle:hover {
-    background-color: #555;
 }
